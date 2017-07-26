@@ -1,10 +1,6 @@
 package io.pivotal.pal.tracker;
 
-import io.pivotal.pal.tracker.entity.TimeEntry;
-
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

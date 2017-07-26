@@ -1,4 +1,4 @@
-package io.pivotal.pal.tracker.entity;
+package io.pivotal.pal.tracker;
 
 public class TimeEntry {
     private long id;

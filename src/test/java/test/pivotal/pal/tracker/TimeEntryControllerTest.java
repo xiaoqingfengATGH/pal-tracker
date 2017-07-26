@@ -2,7 +2,7 @@ package test.pivotal.pal.tracker;
 
 import io.pivotal.pal.tracker.TimeEntryRepository;
 import io.pivotal.pal.tracker.MyTimeEntryController;
-import io.pivotal.pal.tracker.entity.TimeEntry;
+import io.pivotal.pal.tracker.TimeEntry;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;

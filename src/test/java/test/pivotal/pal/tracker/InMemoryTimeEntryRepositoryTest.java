@@ -2,7 +2,7 @@ package test.pivotal.pal.tracker;
 
 import io.pivotal.pal.tracker.InMemoryTimeEntryRepository;
 
-import io.pivotal.pal.tracker.entity.TimeEntry;
+import io.pivotal.pal.tracker.TimeEntry;
 import org.junit.Test;
 
 import java.util.List;
