@@ -42,8 +42,9 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
         if(local.containsKey(id)) {
             timeEntry.setId(id);
             local.put(id, timeEntry);
+            return timeEntry;
         }
-        return local.get(id);
+        return null;
     }
 
     @Override
