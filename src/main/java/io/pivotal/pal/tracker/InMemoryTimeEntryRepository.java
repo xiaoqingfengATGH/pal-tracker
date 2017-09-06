@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -14,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
-    private Map<Long, TimeEntry> local = new HashMap<Long, TimeEntry>();
+    private Map<Long, TimeEntry> local = new ConcurrentHashMap<Long, TimeEntry>();
     private AtomicLong idGenerator = new AtomicLong(0);
 
     @Override
