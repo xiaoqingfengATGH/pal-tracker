@@ -32,7 +32,12 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     public TimeEntry find(Long id) {
         synchronized (lock)
         {
-        return local.get(id);}
+            try {
+                Thread.currentThread().sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return local.get(id);}
     }
 
     @Override
