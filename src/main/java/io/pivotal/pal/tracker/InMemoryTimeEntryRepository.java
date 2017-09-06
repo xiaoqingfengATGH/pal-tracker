@@ -41,7 +41,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     public TimeEntry update(Long id, TimeEntry timeEntry) {
         if(local.containsKey(id)) {
             timeEntry.setId(id);
-            local.put(id, timeEntry);
+            local.replace(id, timeEntry);
             return timeEntry;
         }
         return null;
