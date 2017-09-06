@@ -18,6 +18,8 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     private Map<Long, TimeEntry> local = new ConcurrentHashMap<Long, TimeEntry>();
     private AtomicLong idGenerator = new AtomicLong(0);
 
+    private byte[] lock = new byte[0];
+
     @Override
     public TimeEntry create(TimeEntry timeEntry) {
         long id = idGenerator.incrementAndGet();
@@ -28,7 +30,9 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     @Override
     public TimeEntry find(Long id) {
-        return local.get(id);
+        synchronized (lock)
+        {
+        return local.get(id);}
     }
 
     @Override
@@ -39,9 +43,11 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     @Override
     public TimeEntry update(Long id, TimeEntry timeEntry) {
+        synchronized (lock)
+        {
         local.replace(id, timeEntry);
         timeEntry.setId(id);
-        return timeEntry;
+        return timeEntry;}
     }
 
     @Override
