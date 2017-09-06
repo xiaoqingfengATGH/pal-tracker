@@ -39,12 +39,9 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     @Override
     public TimeEntry update(Long id, TimeEntry timeEntry) {
-        if(local.containsKey(id)) {
-            timeEntry.setId(id);
-            local.replace(id, timeEntry);
-            return timeEntry;
-        }
-        return null;
+        local.replace(id, timeEntry);
+        timeEntry.setId(id);
+        return timeEntry;
     }
 
     @Override
