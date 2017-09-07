@@ -3,3 +3,5 @@ applications:
   path: build/libs/pal-tracker.jar
   random-route: false
   host: yuyang-pal-tracker
+  services:
+    - tracker-database
