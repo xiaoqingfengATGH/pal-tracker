@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/my-time-entries")
+//@RestController
+//@RequestMapping("/my-time-entries")
 public class MyTimeEntryController {
 
     private TimeEntryRepository timeEntryRepository;
